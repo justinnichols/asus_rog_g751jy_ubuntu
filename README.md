@@ -3,7 +3,9 @@
 $> sudo vi /etc/default/grub
 ```
 Set the following:
-`GRUB_CMDLINE_LINUX_DEFAULT="usbhid.quirks=0x0b05:0x17fd:0x0004"`
+```
+GRUB_CMDLINE_LINUX_DEFAULT="usbhid.quirks=0x0b05:0x17fd:0x0004"
+```
 
 Then
 ```
