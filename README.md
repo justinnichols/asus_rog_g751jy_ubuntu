@@ -41,5 +41,6 @@ load-module module-switch-on-connect
 ```
 Then:
 ```
-$> pulseaudio -k #Restart pulseaudio
+$> # Restart pulseaudio
+$> pulseaudio -k
 ```
