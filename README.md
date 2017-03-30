@@ -9,7 +9,7 @@ Then
 ```
 $> sudo update-grub
 ```
-&nbsp;
+
 ## Faster Shutdown
 ```
 $> sudo systemctl edit cups-browsed.service
@@ -20,16 +20,14 @@ Add the following:
 TimeoutStopSec=1
 ```
 Then restart computer.
-&nbsp;
-&nbsp;
+
 ## NVIDIA Drivers
 ```
 $> sudo add-apt-repository ppa:graphics-drivers/ppa
 $> sudo update
 ```
 Load the Additional Drivers app from the Dash and pick nvidia-378 (or latest) and Apply (this may take a while).  Then reboot.
-&nbsp;
-&nbsp;
+
 ## AUDIO
 ```
 $> sudo vi /etc/pulse/default.pa
