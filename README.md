@@ -1,4 +1,11 @@
-## Faster Boot Time
+[Faster Boot Time](#fasterboot)
+[Faster Shutdown](#fastershutdown)
+[NVIDIA Drivers](#nvidia)
+[GNOME3 - Window Decoration Button Order/Location](#windowdecoration)
+[GNOME3 - Close Lid Actions](#closelid)
+[GNOME3 - Sort Directories First](#sortdirs)
+<hr>
+## Faster Boot Time<a name="fasterboot"></a>
 ```
 $> sudo vi /etc/default/grub
 ```
@@ -12,7 +19,7 @@ Then
 $> sudo update-grub
 ```
 
-## Faster Shutdown
+## Faster Shutdown<a name="fastershutdown"></a>
 ```
 $> sudo systemctl edit cups-browsed.service
 ```
@@ -23,7 +30,7 @@ TimeoutStopSec=1
 ```
 Then restart computer.
 
-## NVIDIA Drivers
+## NVIDIA Drivers<a name="nvidia"></a>
 ```
 $> sudo add-apt-repository ppa:graphics-drivers/ppa
 $> sudo update
@@ -31,17 +38,17 @@ $> sudo update
 Load the Additional Drivers app from the Dash and pick nvidia-378 (or latest) and Apply (this may take a while).  Then reboot.
 
 ## GNOME 3
-### CHANGE WINDOW DECORATION BUTTON ORDER/LOCATION
+### CHANGE WINDOW DECORATION BUTTON ORDER/LOCATION<a name="windowdecoration"></a>
 ```
 gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
 ```
-### CLOSE LID
+### CLOSE LID<a name="closelid"></a>
 ```
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'nothing'
 ```
 
-### SORT DIRECTORIES FIRST
+### SORT DIRECTORIES FIRST<a name="sortdirs"></a>
 ```
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 gsettings set org.gnome.nautilus.preferences sort-directories-first true
