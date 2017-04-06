@@ -30,17 +30,8 @@ $> sudo update
 ```
 Load the Additional Drivers app from the Dash and pick nvidia-378 (or latest) and Apply (this may take a while).  Then reboot.
 
-## AUDIO
+## CLOSE LID - DO NOTHING - Gnome3
 ```
-$> sudo vi /etc/pulse/default.pa
-```
-Add:
-```
-# automatically switch to newly-connected devices
-load-module module-switch-on-connect
-```
-Then:
-```
-$> # Restart pulseaudio
-$> pulseaudio -k
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'nothing'
 ```
