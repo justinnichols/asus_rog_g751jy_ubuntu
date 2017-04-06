@@ -1,18 +1,12 @@
-[Faster Boot Time](#fasterboot)
-
-[Faster Shutdown](#fastershutdown)
-
-[NVIDIA Drivers](#nvidia)
-
-[GNOME3 - Window Decoration Button Order/Location](#windowdecoration)
-
-[GNOME3 - Close Lid Actions](#closelid)
-
-[GNOME3 - Sort Directories First](#sortdirs)
-
+[Faster Boot Time](#fasterboot)<br/>
+[Faster Shutdown](#fastershutdown)<br/>
+[NVIDIA Drivers](#nvidia)<br/>
+[GNOME3 - Window Decoration Button Order/Location](#windowdecoration)<br/>
+[GNOME3 - Close Lid Actions](#closelid)<br/>
+[GNOME3 - Sort Directories First](#sortdirs)<br/>
 <hr>
 
-## Faster Boot Time<a name="fasterboot"></a>
+<a name="fasterboot"></a>## Faster Boot Time
 ```
 $> sudo vi /etc/default/grub
 ```
@@ -26,7 +20,7 @@ Then
 $> sudo update-grub
 ```
 
-## Faster Shutdown<a name="fastershutdown"></a>
+<a name="fastershutdown"></a>## Faster Shutdown
 ```
 $> sudo systemctl edit cups-browsed.service
 ```
@@ -37,7 +31,7 @@ TimeoutStopSec=1
 ```
 Then restart computer.
 
-## NVIDIA Drivers<a name="nvidia"></a>
+<a name="nvidia"></a>## NVIDIA Drivers
 ```
 $> sudo add-apt-repository ppa:graphics-drivers/ppa
 $> sudo update
@@ -45,17 +39,17 @@ $> sudo update
 Load the Additional Drivers app from the Dash and pick nvidia-378 (or latest) and Apply (this may take a while).  Then reboot.
 
 ## GNOME 3
-### CHANGE WINDOW DECORATION BUTTON ORDER/LOCATION<a name="windowdecoration"></a>
+<a name="windowdecoration"></a>### CHANGE WINDOW DECORATION BUTTON ORDER/LOCATION
 ```
 gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
 ```
-### CLOSE LID<a name="closelid"></a>
+<a name="closelid"></a>### CLOSE LID
 ```
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'nothing'
 ```
 
-### SORT DIRECTORIES FIRST<a name="sortdirs"></a>
+<a name="sortdirs"></a>### SORT DIRECTORIES FIRST
 ```
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 gsettings set org.gnome.nautilus.preferences sort-directories-first true
