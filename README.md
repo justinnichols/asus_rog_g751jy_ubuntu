@@ -1,10 +1,17 @@
 [Faster Boot Time](#fasterboot)
+
 [Faster Shutdown](#fastershutdown)
+
 [NVIDIA Drivers](#nvidia)
+
 [GNOME3 - Window Decoration Button Order/Location](#windowdecoration)
+
 [GNOME3 - Close Lid Actions](#closelid)
+
 [GNOME3 - Sort Directories First](#sortdirs)
+
 <hr>
+
 ## Faster Boot Time<a name="fasterboot"></a>
 ```
 $> sudo vi /etc/default/grub
