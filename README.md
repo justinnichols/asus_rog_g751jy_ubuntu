@@ -5,6 +5,7 @@
 [GNOME3 - Close Lid Actions](#closelid)<br/>
 [GNOME3 - Sort Directories First](#sortdirs)<br/>
 <hr>
+
 <a name="fasterboot"></a>
 ## Faster Boot Time
 ```
