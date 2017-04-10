@@ -4,6 +4,7 @@
 [GNOME3 - Window Decoration Button Order/Location](#windowdecoration)<br/>
 [GNOME3 - Close Lid Actions](#closelid)<br/>
 [GNOME3 - Sort Directories First](#sortdirs)<br/>
+[GNOME3 - Set Mouse Acceleration Properties](#setmouseaccel)<br/>
 <hr>
 
 <a name="fasterboot"></a>
@@ -59,4 +60,30 @@ gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action '
 ```
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 gsettings set org.gnome.nautilus.preferences sort-directories-first true
+```
+
+<a name="setmouseaccel"></a>
+### SET MOUSE ACCELERATION PROPERTIES
+```
+#!/bin/bash
+
+SEARCH="Razer Razer Naga Chroma"
+
+if [ "$SEARCH" = "" ]; then
+    exit 1
+fi
+
+ids=$(xinput --list | awk -v search="$SEARCH" \
+    '$0 ~ search {match($0, /id=[0-9]+/);\
+                  if (RSTART) \
+                    print substr($0, RSTART+3, RLENGTH-3)\
+                 }'\
+     )
+
+for i in $ids
+do
+    xinput set-prop $i 'Device Accel Profile' -1
+    xinput set-prop $i 'Device Accel Constant Deceleration' 2.5
+    xinput set-prop $i 'Device Accel Velocity Scaling' 1.0
+done
 ```
