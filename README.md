@@ -47,6 +47,7 @@ Load the Additional Drivers app from the Dash and pick nvidia-378 (or latest) an
 ### CHANGE WINDOW DECORATION BUTTON ORDER/LOCATION
 ```
 gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DecorationLayout':<'close,minimize,maximize:'>}"
 ```
 <a name="closelid"></a>
 ### CLOSE LID
