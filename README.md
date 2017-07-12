@@ -1,6 +1,7 @@
 [Faster Boot Time](#fasterboot)<br/>
 [Faster Shutdown](#fastershutdown)<br/>
 [NVIDIA Drivers](#nvidia)<br/>
+[Full Disk Encryption With NVIDIA Drivers](#fde)<br/>
 [GNOME3 - Window Decoration Button Order/Location](#windowdecoration)<br/>
 [GNOME3 - Close Lid Actions](#closelid)<br/>
 [GNOME3 - Sort Directories First](#sortdirs)<br/>
@@ -41,6 +42,15 @@ $> sudo add-apt-repository ppa:graphics-drivers/ppa
 $> sudo update
 ```
 Load the Additional Drivers app from the Dash and pick nvidia-378 (or latest) and Apply (this may take a while).  Then reboot.
+
+<a name="fde"></a>
+## Full Disk Encryption with NVIDIA Drivers
+There is an issue with Full Disk Encryption and NVIDIA drivers that prevents Plymouth from allowing keyboard entry for unlocking the disk encryption.  The following stops Plymouth from loading and instead the boot log will show and it will ask for the decryption password.  The keyboard will work in this case.
+
+Edit `/etc/default/grub` to remove `quiet splash` from `GRUB_CMDLINE_LINUX_DEFAULT`.  Then run:
+```
+$> sudo update-grub
+```
 
 ## GNOME 3
 <a name="windowdecoration"></a>
