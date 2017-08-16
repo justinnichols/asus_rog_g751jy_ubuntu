@@ -56,8 +56,13 @@ $> sudo update-grub
 <a name="windowdecoration"></a>
 ### CHANGE WINDOW DECORATION BUTTON ORDER/LOCATION
 ```
-gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
-gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DecorationLayout':<'close,minimize,maximize:'>}"
+# To the left
+gsettings set org.gnome.desktop.wm.preferences button-layout "close,maximize,minimize:"
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DecorationLayout':<'close,maximize,minimize:'>}"
+
+# To the right
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DecorationLayout':<':minimize,maximize,close'>}"
 ```
 <a name="closelid"></a>
 ### CLOSE LID
